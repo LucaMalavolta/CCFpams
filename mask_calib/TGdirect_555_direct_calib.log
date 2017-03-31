@@ -1,0 +1,29 @@
+ N_objects:         1112           8           3
+ Sunsky_NewMix_neu_hgh_logg_area.dat
+ Sunsky_NewMix_neu_med_logg_area.dat
+ Sunsky_NewMix_neu_low_logg_area.dat
+        1112           3
+ reading orders
+ CHEBY_3D_FIT: M         =       1083
+ CHEBY_3D_FIT: order_x   =          5
+ CHEBY_3D_FIT: order_y   =          5
+ CHEBY_3D_FIT: order_z   =          5
+ CHEBY_3D_FIT: tot_order =        216
+ CHEBY_3D_FIT: VARIABLE allocation
+ CHEBY_3D_FIT: Computing first approximation of coefficients
+ CHEBY_3D_FIT: Deallocation of temporary variables
+ CHEBY_3D_FIT: CALLING lmdif subroutine
+ CHEBY_3D_FIT: Saving the coefficients
+ CHEBY_3D_FIT: Variable deallocation
+ CHEBY_3D_FIT: M         =       1083
+ CHEBY_3D_FIT: order_x   =          5
+ CHEBY_3D_FIT: order_y   =          5
+ CHEBY_3D_FIT: order_z   =          5
+ CHEBY_3D_FIT: tot_order =        216
+ CHEBY_3D_FIT: VARIABLE allocation
+ CHEBY_3D_FIT: Computing first approximation of coefficients
+ CHEBY_3D_FIT: Deallocation of temporary variables
+ CHEBY_3D_FIT: CALLING lmdif subroutine
+ CHEBY_3D_FIT: Saving the coefficients
+ CHEBY_3D_FIT: Variable deallocation
+ FIT COMPLETED

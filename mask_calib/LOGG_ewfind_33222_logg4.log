@@ -1,0 +1,151 @@
+ Chosen orders:            3           3           2
+ CHEBY_3D_FIT: M         =        726
+ CHEBY_3D_FIT: order_x   =          2
+ CHEBY_3D_FIT: order_y   =          2
+ CHEBY_3D_FIT: tot_order =          9
+ CHEBY_3D_FIT: VARIABLE allocation
+ CHEBY_3D_FIT: Computing first approximation of coefficients
+ CHEBY_3D_FIT: Deallocation of temporary variables
+ CHEBY_3D_FIT: CALLING lmdif subroutine
+ CHEBY_3D_FIT: Saving the coefficients
+ CHEBY_3D_FIT: Variable deallocation
+ CHEBY_3D_FIT: M         =       1083
+ CHEBY_3D_FIT: order_x   =          3
+ CHEBY_3D_FIT: order_y   =          3
+ CHEBY_3D_FIT: tot_order =         16
+ CHEBY_3D_FIT: VARIABLE allocation
+ CHEBY_3D_FIT: Computing first approximation of coefficients
+ CHEBY_3D_FIT: Deallocation of temporary variables
+ CHEBY_3D_FIT: CALLING lmdif subroutine
+ CHEBY_3D_FIT: Saving the coefficients
+ CHEBY_3D_FIT: Variable deallocation
+ CHEBY_3D_FIT: M         =       1083
+ CHEBY_3D_FIT: order_x   =          3
+ CHEBY_3D_FIT: order_y   =          3
+ CHEBY_3D_FIT: tot_order =         16
+ CHEBY_3D_FIT: VARIABLE allocation
+ CHEBY_3D_FIT: Computing first approximation of coefficients
+ CHEBY_3D_FIT: Deallocation of temporary variables
+ CHEBY_3D_FIT: CALLING lmdif subroutine
+ CHEBY_3D_FIT: Saving the coefficients
+ CHEBY_3D_FIT: Variable deallocation
+ CHEBY_3D_FIT: M         =       1083
+ CHEBY_3D_FIT: order_x   =          3
+ CHEBY_3D_FIT: order_y   =          3
+ CHEBY_3D_FIT: tot_order =         16
+ CHEBY_3D_FIT: VARIABLE allocation
+ CHEBY_3D_FIT: Computing first approximation of coefficients
+ CHEBY_3D_FIT: Deallocation of temporary variables
+ CHEBY_3D_FIT: CALLING lmdif subroutine
+ CHEBY_3D_FIT: Saving the coefficients
+ CHEBY_3D_FIT: Variable deallocation
+ CHEBY_3D_FIT: M         =       1083
+ CHEBY_3D_FIT: order_x   =          3
+ CHEBY_3D_FIT: order_y   =          3
+ CHEBY_3D_FIT: tot_order =         16
+ CHEBY_3D_FIT: VARIABLE allocation
+ CHEBY_3D_FIT: Computing first approximation of coefficients
+ CHEBY_3D_FIT: Deallocation of temporary variables
+ CHEBY_3D_FIT: CALLING lmdif subroutine
+ CHEBY_3D_FIT: Saving the coefficients
+ CHEBY_3D_FIT: Variable deallocation
+ CHEBY_3D_FIT: M         =       1083
+ CHEBY_3D_FIT: order_x   =          3
+ CHEBY_3D_FIT: order_y   =          3
+ CHEBY_3D_FIT: tot_order =         16
+ CHEBY_3D_FIT: VARIABLE allocation
+ CHEBY_3D_FIT: Computing first approximation of coefficients
+ CHEBY_3D_FIT: Deallocation of temporary variables
+ CHEBY_3D_FIT: CALLING lmdif subroutine
+ CHEBY_3D_FIT: Saving the coefficients
+ CHEBY_3D_FIT: Variable deallocation
+ CHEBY_3D_FIT: M         =       1083
+ CHEBY_3D_FIT: order_x   =          3
+ CHEBY_3D_FIT: order_y   =          3
+ CHEBY_3D_FIT: tot_order =         16
+ CHEBY_3D_FIT: VARIABLE allocation
+ CHEBY_3D_FIT: Computing first approximation of coefficients
+ CHEBY_3D_FIT: Deallocation of temporary variables
+ CHEBY_3D_FIT: CALLING lmdif subroutine
+ CHEBY_3D_FIT: Saving the coefficients
+ CHEBY_3D_FIT: Variable deallocation
+ CHEBY_3D_FIT: M         =       1083
+ CHEBY_3D_FIT: order_x   =          3
+ CHEBY_3D_FIT: order_y   =          3
+ CHEBY_3D_FIT: tot_order =         16
+ CHEBY_3D_FIT: VARIABLE allocation
+ CHEBY_3D_FIT: Computing first approximation of coefficients
+ CHEBY_3D_FIT: Deallocation of temporary variables
+ CHEBY_3D_FIT: CALLING lmdif subroutine
+ CHEBY_3D_FIT: Saving the coefficients
+ CHEBY_3D_FIT: Variable deallocation
+ CHEBY_3D_FIT: M         =       1083
+ CHEBY_3D_FIT: order_x   =          3
+ CHEBY_3D_FIT: order_y   =          3
+ CHEBY_3D_FIT: tot_order =         16
+ CHEBY_3D_FIT: VARIABLE allocation
+ CHEBY_3D_FIT: Computing first approximation of coefficients
+ CHEBY_3D_FIT: Deallocation of temporary variables
+ CHEBY_3D_FIT: CALLING lmdif subroutine
+ CHEBY_3D_FIT: Saving the coefficients
+ CHEBY_3D_FIT: Variable deallocation
+ CHEBY_3D_FIT: M         =       1083
+ CHEBY_3D_FIT: order_x   =          3
+ CHEBY_3D_FIT: order_y   =          3
+ CHEBY_3D_FIT: tot_order =         16
+ CHEBY_3D_FIT: VARIABLE allocation
+ CHEBY_3D_FIT: Computing first approximation of coefficients
+ CHEBY_3D_FIT: Deallocation of temporary variables
+ CHEBY_3D_FIT: CALLING lmdif subroutine
+ CHEBY_3D_FIT: Saving the coefficients
+ CHEBY_3D_FIT: Variable deallocation
+ CHEBY_3D_FIT: M         =       1083
+ CHEBY_3D_FIT: order_x   =          3
+ CHEBY_3D_FIT: order_y   =          3
+ CHEBY_3D_FIT: tot_order =         16
+ CHEBY_3D_FIT: VARIABLE allocation
+ CHEBY_3D_FIT: Computing first approximation of coefficients
+ CHEBY_3D_FIT: Deallocation of temporary variables
+ CHEBY_3D_FIT: CALLING lmdif subroutine
+ CHEBY_3D_FIT: Saving the coefficients
+ CHEBY_3D_FIT: Variable deallocation
+ CHEBY_3D_FIT: M         =       1083
+ CHEBY_3D_FIT: order_x   =          3
+ CHEBY_3D_FIT: order_y   =          3
+ CHEBY_3D_FIT: tot_order =         16
+ CHEBY_3D_FIT: VARIABLE allocation
+ CHEBY_3D_FIT: Computing first approximation of coefficients
+ CHEBY_3D_FIT: Deallocation of temporary variables
+ CHEBY_3D_FIT: CALLING lmdif subroutine
+ CHEBY_3D_FIT: Saving the coefficients
+ CHEBY_3D_FIT: Variable deallocation
+ CHEBY_3D_FIT: M         =       1083
+ CHEBY_3D_FIT: order_x   =          3
+ CHEBY_3D_FIT: order_y   =          3
+ CHEBY_3D_FIT: tot_order =         16
+ CHEBY_3D_FIT: VARIABLE allocation
+ CHEBY_3D_FIT: Computing first approximation of coefficients
+ CHEBY_3D_FIT: Deallocation of temporary variables
+ CHEBY_3D_FIT: CALLING lmdif subroutine
+ CHEBY_3D_FIT: Saving the coefficients
+ CHEBY_3D_FIT: Variable deallocation
+ CHEBY_3D_FIT: M         =       1083
+ CHEBY_3D_FIT: order_x   =          3
+ CHEBY_3D_FIT: order_y   =          3
+ CHEBY_3D_FIT: tot_order =         16
+ CHEBY_3D_FIT: VARIABLE allocation
+ CHEBY_3D_FIT: Computing first approximation of coefficients
+ CHEBY_3D_FIT: Deallocation of temporary variables
+ CHEBY_3D_FIT: CALLING lmdif subroutine
+ CHEBY_3D_FIT: Saving the coefficients
+ CHEBY_3D_FIT: Variable deallocation
+ CHEBY_3D_FIT: M         =       1083
+ CHEBY_3D_FIT: order_x   =          3
+ CHEBY_3D_FIT: order_y   =          3
+ CHEBY_3D_FIT: tot_order =         16
+ CHEBY_3D_FIT: VARIABLE allocation
+ CHEBY_3D_FIT: Computing first approximation of coefficients
+ CHEBY_3D_FIT: Deallocation of temporary variables
+ CHEBY_3D_FIT: CALLING lmdif subroutine
+ CHEBY_3D_FIT: Saving the coefficients
+ CHEBY_3D_FIT: Variable deallocation

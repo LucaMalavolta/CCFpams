@@ -1,0 +1,152 @@
+#PLOT 3
+# mask2direct_tg_1 2
+# mask2direct_tg_2 2
+mask2direct_tg_1 2
+
+		if ($2==1) {device pdfport mask2direct_$1_teff.pdf}
+		if ($2==2) {device pdfland mask2direct_$1_teff_land.pdf}
+
+
+		data TGdirect_$1_direct_calib_res.dat
+		read {ii 1 teff_inp 2 logg_inp 3 gfeh_inp 4 teff 5 gfeh 6}
+		
+		set teff_df = teff-teff_inp
+		set gfeh_df = gfeh-gfeh_inp
+
+		define teff_sousa_err 30
+		define logg_sousa_err 0.06 
+		define gfeh_sousa_err 0.03 
+
+		stats_med teff_df mean sigma
+		set teff_dft = teff_df if (abs(teff_df-$mean)<5*$sigma && logg_inp >4.3 && logg_inp<4.6)
+		stats teff_dft mean sigma kurt
+		echo T_eff $mean $sigma $kurt (log(g) selected)
+		echo $(dimen(teff_df)) $(dimen(teff_dft)) 
+
+		
+		stats_med teff_df mean sigma
+		set teff_dft = teff_df if (abs(teff_df-$mean)<5*$sigma)
+		stats teff_dft mean sigma kurt
+		echo T_eff $mean $sigma $kurt
+		echo $(dimen(teff_df)) $(dimen(teff_dft)) 
+
+		e reset_x11
+		
+		define y_gutter 0.8
+		define x_gutter 1.0
+		ex $default_ex 
+		window 1 3 1 3 limits 4400 6600 -150 150
+		ex $small_ex 
+		ltype 3 blu hline $teff_sousa_err hline -$teff_sousa_err ltype 0
+		nero    points teff_inp teff_df
+		verdone    points teff_inp teff_df if (logg_inp<4.3 || logg_inp > 4.6)
+		
+		rosso   hline $sigma    hline -$sigma
+
+ 		nero box
+		xlabel T_{\rm eff}
+		ylabel \Delta T_{\rm eff}
+		
+		ex $default_ex 
+ 		window 1 3 1 2 limits 3.7 5.0  -150 150
+		ex $small_ex 
+		ltype 3 blu hline $teff_sousa_err hline -$teff_sousa_err ltype 0
+ 		nero    points logg_inp teff_df
+		rosso   hline $sigma    hline -$sigma
+		
+		nero box
+		xlabel log~{\it g}
+		ylabel \Delta T_{\rm eff}
+
+		ex $default_ex  
+		window 1 3 1 1 limits -1.3 0.5 -150 150
+		
+		ex $small_ex 
+		ltype 3 blu hline $teff_sousa_err   hline -$teff_sousa_err ltype 0
+ 		nero    points gfeh_inp teff_df 
+		rosso   hline $sigma    hline -$sigma
+
+ 		nero box
+		xlabel [{\rm Fe/H}]
+		ylabel \Delta T_{\rm eff}
+		ex $default_ex  
+		
+		define y_gutter 1.0
+		if ($2>0) { 
+		   device nodevice 
+		}
+		
+		
+mask2direct_tg_2 2
+
+
+		if ($2==1) {device pdfport mask2direct_$1_gfeh.pdf}
+		if ($2==2) {device pdfland mask2direct_$1_gfeh_land.pdf}
+		
+		data TGdirect_$1_direct_calib_res.dat
+		read {ii 1 teff_inp 2 logg_inp 3 gfeh_inp 4 teff 5 gfeh 6}
+		
+		set teff_df = teff-teff_inp
+		set gfeh_df = gfeh-gfeh_inp
+		
+		define teff_sousa_err 30
+		define logg_sousa_err 0.06 
+		define gfeh_sousa_err 0.03 
+		
+
+		stats_med gfeh_df mean sigma
+		set gfeh_dft = gfeh_df if (abs(gfeh_df-$mean)<5*$sigma && logg_inp >4.3 && logg_inp<4.6)
+		stats gfeh_dft mean sigma kurt
+		echo [Fe/H] $mean $sigma $kurt (log(g) selected)
+		
+		stats_med gfeh_df mean sigma
+		set gfeh_dft = gfeh_df if (abs(gfeh_df-$mean)<5*$sigma)
+		stats gfeh_dft mean sigma kurt
+		echo [Fe/H] $mean $sigma $kurt
+		
+		e reset_x11
+
+		define y_gutter 0.8
+		define x_gutter 1.0
+		
+		ex $default_ex  
+		window 1 3 1 3 limits 4400 6600 -0.16 0.16 
+		ex $small_ex 
+		ltype 3 blu hline $gfeh_sousa_err hline -$gfeh_sousa_err ltype 0
+		nero points teff_inp gfeh_df
+		rosso   hline $sigma    hline -$sigma
+		
+		nero box
+		xlabel T_{\rm eff}
+		ylabel \Delta [{\rm Fe/H}]
+
+		ex $default_ex  
+ 		window 1 3 1 2 limits 3.7 5.0  -0.16 0.16 
+		ex $small_ex 
+		ltype 3 blu hline $gfeh_sousa_err hline -$gfeh_sousa_err ltype 0
+		nero points logg_inp gfeh_df
+		rosso   hline $sigma    hline -$sigma
+		
+		nero box
+		xlabel log~{\it g}
+		ylabel \Delta [{\rm Fe/H}]
+
+		ex $default_ex  
+		window 1 3 1 1 limits -1.3 0.5 -0.16 0.16  
+		ex $small_ex 
+		ltype 3 blu hline $gfeh_sousa_err hline -$gfeh_sousa_err ltype 0
+		nero points gfeh_inp gfeh_df
+		rosso   hline $sigma    hline -$sigma
+		
+		nero box
+		xlabel [{\rm Fe/H}]
+		ylabel \Delta [{\rm Fe/H}]
+
+ 		define y_gutter 1.0
+		ex $default_ex  
+		
+		
+		if ($2>0) { 
+		   device nodevice 
+		}
+		
