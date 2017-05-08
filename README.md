@@ -15,29 +15,43 @@ The paper describing the technique has been accepted by MNRAS and it will be ava
 
 ### Install and Compile
 
- `CCFpams` is avaialble on [GitHub](https://github.com/LucaMalavolta/CCFpams/ "CCFpams repository")
+`CCFpams` is avaialble on [GitHub](https://github.com/LucaMalavolta/CCFpams/ "CCFpams repository")
 
- Download the .zip files or clone the repository. `harps_input2pams.f90` and `harpn_input2pams.f90` are the two FORTRAN90 codes to compute the stellar parameters from HARPS and HARPS-N data respectively.
+Download the .zip files or clone the repository. `harps_input2pams.f90` and `harpn_input2pams.f90` are the two FORTRAN90 codes to compute the stellar parameters from HARPS and HARPS-N data respectively.
 
  The subroutines required by the two programs are inside the `routines_f90` folder. Calibration files required by the two programs are stored in the `mask_calib` folder.
 
  Before compiling, you have to declare the path of the code in the code itself. In this way the code will be able to find automatically all the required calibration files. Additionally you can specify the directory of the HARPS/HARPS-N archive of the _DRS reduced_ files.
 
- To do so, open `harps_input2pams_v3.f90`/`harpn_input2pams_v3.f90` with a text editor and change `code_path` and (optionally) `archive_harpn` with the full path of your folders.
+To do so, open `harps_input2pams_v3.f90`/`harpn_input2pams_v3.f90` with a text editor and change `code_path` and (optionally) `archive_harpn` with the full path of your folders.
 
- ```fortran
+```fortran
   character (len=*), parameter :: &
      code_path = '/home/malavolta/CODE/CCFpams/', &
      archive_harpn = '/home/malavolta/data/HARPN/data/'
-  ```
+```
 
 To compile the program, just execute in a shell:
 
- ```sh
-  $ ./COMPILE
- ```
- The script will create two executable files, `harps_input2pams.e` and `harpn_input2pams.e`
+```sh
+ $ ./COMPILE
+```
+The script will create two executable files, `harps_input2pams.e` and `harpn_input2pams.e`
 
 ### Prepare the observations
 
-Try
+The program requires a file where all the observations to be analyzed are listed.
+The file list must include:
+- the date when the observations have been gathered (the value at the beginning of the night is taken as reference),
+- the filename of the raw data, without extension,
+- the mask that have been used by the DRS to reduce the data and extract the CCF.
+Its structure must follow this example:
+```text
+2014-07-08   HARPN.2014-07-09T01-15-47.342   G2
+2014-07-09   HARPN.2014-07-10T01-43-07.290   G2
+2014-07-10   HARPN.2014-07-11T00-07-59.866   G2
+...
+```
+The size of the space between the columns is not relevant.
+
+The code will use these information to locate the 2-dimensional extracted spectrum (```e2ds``` file), the CCF extracted by the pipeline (to correct for the barycentric earth RV and remove the RV of the star), and the blaze function of the spectrograph.
