@@ -10,8 +10,8 @@ The paper describing the technique has been accepted by MNRAS and it will be ava
 
 ## CCFpams user guide
 
-1. [Install and Compile](### Install and Compile)
-2. [Prepare the observations](#prepare)
+1. [Install and Compile](#install-and-compile)
+2. [Prepare the observations](#prepare-the-observations)
 
 ### Install and Compile
 
@@ -39,6 +39,5 @@ To compile the program, just execute in a shell:
  The script will create two executable files, `harps_input2pams.e` and `harpn_input2pams.e`
 
 ### Prepare the observations
-[Prepare the observations]:#prepare
 
 Try
