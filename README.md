@@ -38,7 +38,7 @@ To compile the program, just execute in a shell:
  ```
  The script will create two executable files, `harps_input2pams.e` and `harpn_input2pams.e`
 
-[Prepare the observations]:#prepare
 ### Prepare the observations
+[Prepare the observations]:#prepare
 
 Try
