@@ -1,7 +1,7 @@
 Program harps_input2pams
   use Common
   use Fits
-  use Instrument_HARPS
+  use Instrument_HARPN
   use CCF
   use Chebyshev_Fit
   use Poly_Fit
@@ -10,12 +10,11 @@ Program harps_input2pams
   implicit none
 
   character (len=*), parameter :: &
-    code_path = '/home/malavolta/CODE/CCFpams/', &
-    archive_raw_harpn = '/home/malavolta/data/HARPN/data/', &
-    archive_red_harpn = '/home/malavolta/data/HARPN/data/'
+    code_path = '/Users/malavolta/Astro/CODE/CCFpams/', &
+    archive_harpn = '/Users/malavolta/data/HARPN/'
 
   !!$ hard-coded files to easily run the script
-  character (len=*), parameter :: code_dir  = 'harps_ccf/', &
+  character (len=*), parameter :: &
           calib_fdir='mask_calib/', sccf_dir ='../mask_ccf/', &
           calib_mask1 = 'TGdirect_666_direct_calib_cheb.dat', &
           calib_mask2 = 'LOGG_ewfind_33222_ewfind_logg4_calib_cheb.dat', &
@@ -42,7 +41,7 @@ Program harps_input2pams
   integer :: i, ii, n, nl, no, ns, nx, ny, nt ! these are counting variables
   integer :: nh_sel, check
 
-  character (len=nch_object) :: object, object_tmp
+  character (len=nch_object) :: object
 
   ! fits images informations
   real (PR), dimension(n_pix,n_order) :: d2pix,w2pix,p2pix,blaze
@@ -151,7 +150,6 @@ Program harps_input2pams
   !!call getarg(1,line_list)
   !!call getarg(2,calib_mask1)
   !!call getarg(3,calib_mask2)
-
   n_com = iargc()
 
   if (n_com.lt.1) then
@@ -165,11 +163,10 @@ Program harps_input2pams
   end if
 
 
-  call getarg(1,option_in);  object_list=trim(option_in)
-  call getarg(2,option_in);  object=trim(option_in)
-  write(*,*)  object_list
+  call getarg(1,option);  read (option,*) object_list
+  call getarg(2,option);  read (option,*) object
 
-  archive_files=archive_red_harpn
+  archive_files=archive_harpn
 
   !! check wheter the data are store in a local folder or in the default HARPS-N folder (default)
   if (n_com .ge. 3) then
@@ -189,7 +186,6 @@ Program harps_input2pams
     call getarg(5,option_in)!;  read (option,*) option_in
     if (option_in .eq. 'verbose') verbose = .True.
   end if
-
 
   !! FIRST PART: Building the CCFs...
   allocate(dwpix(n_pix,n_order))
@@ -415,7 +411,7 @@ Program harps_input2pams
   end do
 
   bjd_avg = 0.0d0
-  write(*,*)  object_list
+
   open(input_lun,file=trim(object_list),status='old')
 
   !! CCFs and configuration files for each exsposure are created individually
@@ -423,6 +419,7 @@ Program harps_input2pams
   call system('mkdir -p output_dir')
   object_file =  'output_dir/'// trim(object) // '_outcal.dat'
   open(output_lun,file=trim(object_file),status='new')
+
 
   object_file =  'output_dir/'// trim(object) // '_outcal_extended.dat'
   open(extended_lun,file=trim(object_file),status='new')
@@ -441,9 +438,9 @@ Program harps_input2pams
 
   !! New addition to better perform flux correction
 
-
+  fiber_sel = 'A'
   do while (read_iostat.eq.0)
-     read(input_lun,*,iostat=read_iostat) file_night, file_rad, mask_sel, fiber_sel, object_tmp
+     read(input_lun,*,iostat=read_iostat) file_night, file_rad, mask_sel
      if (read_iostat.ne.0) exit
      write(*,*)
      write(*,*) 'Doing spectrum ', trim(file_rad)
@@ -460,7 +457,6 @@ Program harps_input2pams
 
      if (check.eq.0) then
         !File has not been processed before, going now
-
         call system('mkdir -p '//sccf_dir//trim(object))
 
         !reading the fits file and
@@ -815,7 +811,7 @@ Program harps_input2pams
     if (logg_val.lt. 3.0 .or. logg_val.gt. 5.1) logg_val = 8.00
 
     call get_errors(snr_pip,teff_err,gfeh_err,logg_err)
-
+    bjd_obs = 0.0
     n_list = 0
     n_count = 0
     airmass = 0.0
@@ -864,10 +860,7 @@ Program harps_input2pams
   deallocate(dwpix)
   deallocate(cont_ccf)
 
-  write(*,*)
-  write(*,*) 'Program completed'
-  write(*,*)
-  !! Internal subroutines se  ction
+  !! Internal subroutines section
 contains
 
   subroutine get_gaussfit
