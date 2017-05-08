@@ -10,11 +10,12 @@ The paper describing the technique has been accepted by MNRAS and it will be ava
 
 ## CCFpams user guide
 
-1. [Install and Compile](### Install and Compile)
-2. [Prepare the observations](### Prepare the observations)
+1. [Install and Compile](###Install and Compile)
+2. [Prepare the observations](###Prepare the observations)
 
 ### Install and Compile
- `CCFpams` is avaialble at [https://github.com/LucaMalavolta/PyORBIT](https://github.com/LucaMalavolta/CCFpams)
+
+ `CCFpams` is avaialble on [GitHub](https://github.com/LucaMalavolta/CCFpams/ "CCFpams repository")
 
  Download the .zip files or clone the repository. `harps_input2pams.f90` and `harpn_input2pams.f90` are the two FORTRAN90 codes to compute the stellar parameters from HARPS and HARPS-N data respectively.
 
@@ -35,6 +36,7 @@ To compile the program, just execute in a shell:
  ```sh
   $ ./COMPILE
  ```
- The script will create two executable files, `harps_input2pams.e` and `harpn_input2pams_v3.e`
+ The script will create two executable files, `harps_input2pams.e` and `harpn_input2pams.e`
+
 
 ### Prepare the observations
