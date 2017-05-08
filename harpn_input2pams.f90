@@ -154,7 +154,7 @@ Program harps_input2pams
 
   if (n_com.lt.1) then
      write(*,*) 'Input 1: object list file'
-     write(*,*) 'Input 2: output rad (usually the object name)'
+     write(*,*) 'Input 2: output prefix (usually the object name)'
      write(*,*) 'Input 3: (optional): archive directory '
      write(*,*) 'Input 4: (optional): 0 = do not use date as prefix '
      write(*,*) 'Input 4  to be used if all the files are in the same directory (as Yabi reprocessed files are) '
@@ -460,7 +460,7 @@ Program harps_input2pams
         call system('mkdir -p '//sccf_dir//trim(object))
 
         !reading the fits file and
-        file = trim(archive_files)//trim(file_night)//'/'//trim(file_rad)//'_e2ds_'//trim(fiber_sel)//'.fits'
+        file = trim(archive_files)//'/'//trim(file_night)//'/'//trim(file_rad)//'_e2ds_'//trim(fiber_sel)//'.fits'
         call fits_check(file,sts_out)
         if (sts_out.eq.0) then
            write(*,*) '     FILE '//trim(file)//' does not exist, no output file created for this exposure'
@@ -472,7 +472,7 @@ Program harps_input2pams
         call fits_close(fits_lun)
 
         !we retrieve the blaze correction fits
-        file = trim(archive_files)//trim(file_night)//'/'//trim(file_rad)//'_ccf_'// &
+        file = trim(archive_files)//'/'//trim(file_night)//'/'//trim(file_rad)//'_ccf_'// &
              trim(mask_sel)//'_'//trim(fiber_sel)//'.fits'
 
         call fits_check(file,sts_out)
@@ -498,7 +498,7 @@ Program harps_input2pams
         !! UPDATE: We are now using directly the drift-uncorrected RV
         w2pix = (1._PR)*((berv-rv_drift-rvc_fin)/cc+1._PR)*w2pix
 
-        file = trim(archive_files)//trim(file_night)//'/'//trim(file_blaze)
+        file = trim(archive_files)//'/'//trim(file_night)//'/'//trim(file_blaze)
         call fits_check(file,sts_out)
         if (sts_out.eq.0) then
            write(*,*) '     FILE '//trim(file)//' does not exist, no output file created for this exposure'
