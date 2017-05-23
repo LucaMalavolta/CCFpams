@@ -979,6 +979,6 @@ contains
     gfeh_err = sqrt((50.0d0/snr)*(0.035d0**2) + 0.03d0**2)
     logg_err = sqrt((50.0d0/snr)*(0.09d0**2) + 0.06d0**2)
     return
-  end
+  end subroutine
 
 end Program harps_input2pams
