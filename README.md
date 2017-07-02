@@ -6,7 +6,7 @@ CCFpams is a novel approach that allows the measurement of stellar temperature,
 metallicity and gravity within a few seconds and in a completely automated fashion. Rather than performing comparisons with spectral libraries, our technique is based on the determination of several cross-correlation functions (CCFs) obtained by including spectral features with different sensitivity to the photospheric parameters. We use literature stellar parameters of high signal-to-noise (SNR), high-resolution HARPS spectra of FGK Main Sequence stars to calibrate the stellar parameters as a function of CCF areas.  For FGK
 stars we achieve a precision of 50K in temperature, 0.09 dex in gravity and 0.035 dex in metallicity at SNR=50 while the precision for observation with SNR>100 and the overall accuracy are constrained by the literature values used to calibrate the CCFs.
 
-The paper describing the technique has been accepted by MNRAS and it will be available on Monday 05/08/2017. In this repository the code to extract the parameters from HARPS and HARPS-N is provided.
+The paper describing the technique has been published by MNRAS ([Malavolta et al. 2017](http://adsabs.harvard.edu/abs/2017MNRAS.469.3965M)). In this repository the code to extract the parameters from HARPS and HARPS-N is provided.
 
 ## CCFpams user guide
 
