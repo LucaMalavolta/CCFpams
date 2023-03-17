@@ -10,8 +10,8 @@ Program harps_input2pams
   implicit none
 
   character (len=*), parameter :: &
-    code_path = '/Users/malavolta/Astro/CODE/CCFpams/', &
-    archive_harpn = '/Users/malavolta/data/HARPN/'
+    code_path = '/home/malavolta/CODE/CCFpams/', &
+    archive_harpn = '/home/malavolta/data/HARPN/'
 
   !!$ hard-coded files to easily run the script
   character (len=*), parameter :: &
