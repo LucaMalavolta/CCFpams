@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# https://forum.mmm.ucar.edu/threads/how-to-fix-error-rank-mismatch-between-actual-argument-at-1-and-actual-argument-at-2.11998/#post-27521
 
 #IF statement for GNU compiler issue
 export GCC_VERSION=$(/usr/bin/gcc -dumpfullversion | awk '{print$1}')
