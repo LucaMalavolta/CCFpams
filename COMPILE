@@ -1,7 +1,12 @@
 #!/bin/bash
 
 export GFORTRAN_COMP=gfortran
-export LIB_CFITSIO=../others/cfitsio/lib
+export CFITSIO_LIBS=../others/cfitsio/lib
+
+export CURL_INCLUDE=/usr/local/opt/curl/include
+export CURL_LIBS=/usr/local/opt/curl/lib
+
+
 #modules are compiled apart
 cd ./routines_f90/
 rm *.o *.mod
@@ -19,5 +24,5 @@ $GFORTRAN_COMP -O2 -funroll-loops  -c ./poly_fit.f90
 
 
 cd ..
-$GFORTRAN_COMP -O2 -funroll-loops -fexpensive-optimizations ./routines_f90/*.o -J ./routines_f90/  harpn_input2pams.f90 -o ./harpn_input2pams.e -lblas -llapack -lm -L$LIB_CFITSIO -lcfitsio
-$GFORTRAN_COMP -O2 -funroll-loops -fexpensive-optimizations ./routines_f90/*.o -J ./routines_f90/  harps_input2pams.f90 -o ./harps_input2pams.e -lblas -llapack -lm -L$LIB_CFITSIO -lcfitsio
+$GFORTRAN_COMP -O2 -funroll-loops -fexpensive-optimizations ./routines_f90/*.o -J ./routines_f90/  harpn_input2pams.f90 -o ./harpn_input2pams.e -lblas -llapack -lcurl -lm -L$CFITSIO_LIBS -lcfitsio
+$GFORTRAN_COMP -O2 -funroll-loops -fexpensive-optimizations ./routines_f90/*.o -J ./routines_f90/  harps_input2pams.f90 -o ./harps_input2pams.e -lblas -llapack -lcurl -lm -L$CFITSIO_LIBS -lcfitsio
