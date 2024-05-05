@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export GFORTRAN_COMP=gfortran
-export CFITSIO_LIBS=../others/cfitsio/lib
+export CFITSIO_LIBS=../others/cfitsio-4.1.0/lib
 
 export CURL_INCLUDE=/usr/local/opt/curl/include
 export CURL_LIBS=/usr/local/opt/curl/lib
@@ -11,18 +11,18 @@ export CURL_LIBS=/usr/local/opt/curl/lib
 cd ./routines_f90/
 rm *.o *.mod
 
-$GFORTRAN_COMP -O2 -funroll-loops  -c ./common.f90
-$GFORTRAN_COMP -O2 -funroll-loops  -c ./fits.f90
-$GFORTRAN_COMP -O2 -funroll-loops  -c ./instrument_harps.f90
-$GFORTRAN_COMP -O2 -funroll-loops  -c ./instrument_harpn.f90
-$GFORTRAN_COMP -O2 -funroll-loops  -c ./levenberg_marquardt.f90
-$GFORTRAN_COMP -O2 -funroll-loops  -c ./levenberg_marquardt_mod5V.f90
-$GFORTRAN_COMP -O2 -funroll-loops  -c ./ccf.f90
-$GFORTRAN_COMP -O2 -funroll-loops  -c ./gaussian_fit.f90
-$GFORTRAN_COMP -O2 -funroll-loops  -c ./chebyshev_fit.f90
-$GFORTRAN_COMP -O2 -funroll-loops  -c ./poly_fit.f90
+$GFORTRAN_COMP -O2 -funroll-loops -fallow-argument-mismatch -c ./common.f90
+$GFORTRAN_COMP -O2 -funroll-loops -fallow-argument-mismatch -c ./fits.f90
+$GFORTRAN_COMP -O2 -funroll-loops -fallow-argument-mismatch -c ./instrument_harps.f90
+$GFORTRAN_COMP -O2 -funroll-loops -fallow-argument-mismatch -c ./instrument_harpn.f90
+$GFORTRAN_COMP -O2 -funroll-loops -fallow-argument-mismatch -c ./levenberg_marquardt.f90
+$GFORTRAN_COMP -O2 -funroll-loops -fallow-argument-mismatch -c ./levenberg_marquardt_mod5V.f90
+$GFORTRAN_COMP -O2 -funroll-loops -fallow-argument-mismatch -c ./ccf.f90
+$GFORTRAN_COMP -O2 -funroll-loops -fallow-argument-mismatch -c ./gaussian_fit.f90
+$GFORTRAN_COMP -O2 -funroll-loops -fallow-argument-mismatch -c ./chebyshev_fit.f90
+$GFORTRAN_COMP -O2 -funroll-loops -fallow-argument-mismatch -c ./poly_fit.f90
 
 
 cd ..
-$GFORTRAN_COMP -O2 -funroll-loops -fexpensive-optimizations ./routines_f90/*.o -J ./routines_f90/  harpn_input2pams.f90 -o ./harpn_input2pams.e -lblas -llapack -lcurl -lm -L$CFITSIO_LIBS -lcfitsio
-$GFORTRAN_COMP -O2 -funroll-loops -fexpensive-optimizations ./routines_f90/*.o -J ./routines_f90/  harps_input2pams.f90 -o ./harps_input2pams.e -lblas -llapack -lcurl -lm -L$CFITSIO_LIBS -lcfitsio
+$GFORTRAN_COMP -O2 -funroll-loops -fexpensive-optimizations -fallow-argument-mismatch ./routines_f90/*.o -J ./routines_f90/  harpn_input2pams.f90 -o ./harpn_input2pams.e -lblas -llapack  -lm -L$CFITSIO_LIBS -lcfitsio
+$GFORTRAN_COMP -O2 -funroll-loops -fexpensive-optimizations -fallow-argument-mismatch ./routines_f90/*.o -J ./routines_f90/  harps_input2pams.f90 -o ./harps_input2pams.e -lblas -llapack  -lm -L$CFITSIO_LIBS -lcfitsio
