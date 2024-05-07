@@ -15,7 +15,7 @@ Program harps_input2pams
 
   !!$ hard-coded files to easily run the script
   character (len=*), parameter :: &
-          calib_fdir='mask_calib/', sccf_dir ='../mask_ccf/', &
+          calib_fdir='mask_calib/', sccf_dir ='./mask_ccf/', &
           calib_mask1 = 'TGdirect_666_direct_calib_cheb.dat', &
           calib_mask2 = 'LOGG_ewfind_33222_ewfind_logg4_calib_cheb.dat', &
           line_list = 'Sunsky_linelist.dat'
